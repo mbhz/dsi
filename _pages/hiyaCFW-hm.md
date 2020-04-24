@@ -28,65 +28,50 @@ HiyaCFW имеет ряд преимуществ, по сравнению с  п
 - Автоматическая загрузка в другие приложения, такие как TWiLightMenu++
 
 ## Что понадобится
-- SD-карта или microSD + переходник. Если объём карты памяти больше чем 2 гб, то нужно будет или устанавливать TWiLightMenu++ вместо системного меню DSi (об этом ниже), или же [размечать карту памяти](https://hetmanrecovery.com/ru/recovery_news/how-to-split-a-usb-flash-drive-or-an-sd-card-using-disk-management-in-windows-10.htm){:target="_blank"} таким образом, чтобы основной раздел на ней был не более 2 гб
-- Подписанный NAND Вашей приставки, сделанный ранее (хххххххххххххххх-footer.bin)
+- SD-карта или microSD + переходник
+- Бэкап NAND Вашей приставки, сделанный ранее
 - [HiyaCFW Helper](https://github.com/mondul/HiyaCFW-Helper/releases){:target="_blank"}
 	- Пользователи Windows запускают `.exe` файл
-	- Пользователи других систем запускают `.py` (необходимо наличие [Python 2](https://www.python.org/downloads/){:target="_blank"})
-	- Пользователям Windows дополнительно требуется свежая версия [OSFMount](https://www.osforensics.com/tools/mount-disk-images.html){:target="_blank"}
+	- Пользователи других систем запускают `.py` (необходимо наличие [Python 3](https://www.python.org/downloads/){:target="_blank"})
+	- Пользователям Windows дополнительно требуется последняя версия [7-Zip](https://www.7-zip.org/download.html){:target="_blank"}
 
 	
 ## Инструкция
 1. Вставьте Вашу SD-карту в компьютер
-2. Извлеите содержимое архива `HiyaCFW Helper.zip` в любую папку на Вашем компьютере. 
+2. Извлеките содержимое архива `HiyaCFW Helper.zip` в любую папку на Вашем компьютере.
+	- **Важно!!! Пути к HiyaCFW Helper и бекапу нанда не должны содержать кириллицу (русские буквы)!!!**
 3. Перейдите к этой папке
 4. Откройте HiyaCFW Helper с правами администратора
-	- Пользователям Windows - правая кнпка мыши > ![]({{ "/images/uac.png" | absolute_url }}) запуск от имени администратора
+	- Пользователям Windows - правая кнопка мыши > ![]({{ "/images/uac.png" | absolute_url }}) запуск от имени администратора
 5. Нажмите кнопку `...` в поле `NAND file with No$GBA footer`
 6. Выбирите Ваш подписанный NAND c установленным Unlaunch(хххххххххххххххх-unlaunch.bin) и нажмите `open`
-7. **[Опционально]** Если хотите установить TWiLightMenu++ вместо системного меню DSi, отметьте галочкой `Install latest TWiLight Menu++ on custom firmware`
+7. Отметьте галочкой `Install latest TWiLight Menu++ on custom firmware`
 8. Нажмите `Start`
-9. В новом открывшемся окне выберите Вашу SD-карту и нажмите `ok`
+9. В новом всплывающем окне нажмите `ok`
+10. В новом открывшемся окне выберите корень Вашей SD-карты и нажмите `выбор папки`
 	- Процесс займет некоторое время
 	- Когда появится надпись `Done!`, процесс будет завершен
-10. Закройте HiyaCFW Helper
-11. Откройте Вашу SD-карту и переименуйте файл `hiya.dsi` в `bootcode.dsi`
-11. Извлеките Вашу SD-карту и вставьте ее в DSi
-12. Включите Вашу консоль
-	- Появится экран настроек HiyaCFW
-13. Отметьте необходимые вам опции и нажмите ![]({{ "/images/buttons/START.png" | absolute_url }})	
-	- Если используется SD-карта объемом больше 2gb, или Вы хотите заменить стандартное меню на TWiLightMenu++, отметьте пункт `Autoboot title`. 
+11. Закройте HiyaCFW Helper
+12. Извлеките Вашу SD-карту и вставьте ее в DSi
+13. Включите консоль, зажав кнопки ![]({{ "/images/buttons/A.png" | absolute_url }}) и ![]({{ "/images/buttons/B.png" | absolute_url }})
+	- появится экран меню Unlaunch
+14. Выберите **OPTIONS**
+15. Выберите **NO BUTTON**
+16. Из списка выберите **HIYACFW** 
+17. Выберите **SAVE & EXIT**
+18. Выключите консоль и включите ее снова
+19.	Появится экран настроек HiyaCFW
+	- **[Опционально]** отметьте пункт **Autoboot title**, если хотите, чтобы TWiLightMenu ++ запускалось автоматически при включении консоли
+	- **[Опционально]** отметьте пункт **Dsi Splash/H&S** для отображения сплешкрина при включении консоли 	
+20. Нажмите ![]({{ "/images/buttons/START.png" | absolute_url }}) для сохранения настроек и включения консоли	 
 
 Теперь система будет грузиться с SD-карты вместо внутренней NAND памяти консоли. 
 
+Если при включении появляется ошибка "An Error Has Occurred", обратитесь к [FAQ](faq){:target="_blank"}
+
 Если захотите загрузиться с внутренней NAND памяти, минуя HiyaCFW, можете настроить "горячую клавишу" для `LAUNCHER` так же, как проделали это для `HIYACFW`
 
-
-## Использование
-1. Скопируйте ромы в соответствующие им папки на SD-карте консоли:
-	- Game Boy и Game Boy Color ромы поместите в папку `/roms/gb`
-    - Nintendo DS ромы поместите в папку `/roms/nds`
-    - NES ромы поместите в папку `/roms/nes`
-    - Для Game Boy Advance ромов создайте в папке `roms` папку `GBA` и поместите их в нее
-		- Для запуска GBA ромов нужен биос от GBA, помещенный в корень SD-карты под именем `"bios.bin"` (ищите в интернете сами).		
-2. Появится главное меню TWiLightMenu++ (Можно отключить в настройках, чтобы сразу переходить к списку игр)
-	- Нажмите на иконку ![]({{ "/images/buttons/rg.png" | absolute_url }}) чтобы открыть список игр 
-		- Нажмите ![]({{ "/images/buttons/A.png" | absolute_url }}) чтобы запустить DS/DSiWare игры
-		- Нажмите ![]({{ "/images/buttons/X.png" | absolute_url }}) чтобы открыть параметры запуска игры
-		- Нажмите на иконку ![]({{ "/images/buttons/gba_icon.png" | absolute_url }}) чтобы запустить **GBARunner2** - эмулятор Game Boy Advance
-		- Нажмите на иконку ![]({{ "/images/buttons/sega.png" | absolute_url }}) чтобы запустить **jEnesisDS**  - эмулятор Sega Mega Drive
-		- Нажмите на иконку ![]({{ "/images/buttons/snes.png" | absolute_url }}) чтобы запустить **SNEmulDS** - эмулятор Super Nintendo
-		- Нажмите на иконку ![]({{ "/images/buttons/cart_icon.png" | absolute_url }}) чтобы запустить флешкартридж
-		- Нажмите на иконку ![]({{ "/images/buttons/set_icon.png" | absolute_url }}) чтобы запустить настройки **TWiLightMenu**
-		- Нажмите на иконку ![]({{ "/images/buttons/home_icon.png" | absolute_url }}) чтобы вернуться к стандартному меню DSi
-
-
-
-Для работы эмуляторов SMD и SNES требуется создать файлы образов с играми. Подробная инструкция [здесь](smdsnesimg){:target="_blank"}		
-		
-		
 ____
 
 [**Полезные инструкции**](addons)
 {: .notice--success}
-		

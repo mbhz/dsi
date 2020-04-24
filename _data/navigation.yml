@@ -3,13 +3,11 @@ main:
   - title: "<b>Прошить другую<br>приставку</b>"
     url: http://customfw.xyz
   - title: "<i>Купить<br>прошитую</i>"
-    url: https://3dscfw.olx.ua/
-  - title: "Дампинг<br>DSiWare<br>приложений"
-    url: /dumping-dsiware
-  - title: "Установка<br>DSiWare<br>приложений"
-    url: /installing-dsiware    
+    url: https://nincfw.olx.ua/  
   - title: "FAQ"
     url: /faq
+  - title: "Установка<br>DSiWare"
+    url: /dsiware-nds     
   - title: "Навигация<br>по сайту"
     url: /site-navigation
   - title: "Полезные<br>инструкции"
@@ -22,12 +20,10 @@ main:
 addons:
   - title: "Обновление TWiLightMenu++"
     url: /twlmenu_update
-  - title: "Дампинг DSiWare приложений"
-    url: /dumping-dsiware
   - title: "Установка DSiWare приложений"
-    url: /installing-dsiware
-  - title: "DSiWare приложения в формате `.nds`"
-    url: /dsiware-nds 
+    url: /dsiware-nds
+  - title: "Дампинг и установка DSiWare приложений с испоьзованием 3ds"
+    url: /dumping-dsiware 
   - title: "FAQ"
     url: /faq
              
